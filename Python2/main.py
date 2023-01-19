@@ -1,39 +1,39 @@
+import sys
 
-from PyQt5 import QtWidgets
+from PyQt5.QtWidgets import *
 
 from MainPage import Ui_MainPage
-from display import Ui_Display
+from Display import Ui_Display
 
 
-class first_window(QtWidgets.QMainWindow, Ui_MainPage):
-    def __int__(self, parent=None):
-        super(first_window, self).__int__(parent)
-        self.setupUi(self)
-        self.pushButton.clicked.connect(self.hide)
-
-
-class second_window(QtWidgets.QDialog, Ui_Display):
-    def __int__(self, parent=None):
-        super(second_window, self).__int__(parent)
-        self.setupUi(self)
-        self.BackButton.clicked.connect(self.hide)
-
-
-class manager:
+class first_window(QWidget, Ui_MainPage):
+    
     def __int__(self):
-        self.first = first_window()
-        self.second = second_window()
+        super(first_window, self).__int__()
+        self.setupUi(self)
+        self.pushButton.clicked.connect(self.gotosecond)
 
-        self.first.pushButton.clicked.connect(self.second.show)
-        self.second.BackButton.clicked.connect(self.first.show)
+    def gotosecond(self):
+        this = second_window()
+        this.show()
+        self.hide()
 
-        self.first.show()
+
+class second_window(QWidget, Ui_Display):
+
+    def __int__(self):
+        super(second_window, self).__int__()
+        self.setupUi(self)
+        self.BackButton.clicked.connect(self.gotofirst)
+
+    def gotofirst(self):
+        that = first_window()
+        that.show()
+        self.hide()
 
 
 if __name__ == '__main__':
-    import sys
-
-    app = QtWidgets.QApplication(sys.argv)
-    manager = manager()
+    app = QApplication([])
+    window = first_window()
+    window.show()
     sys.exit(app.exec_())
-
