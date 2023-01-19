@@ -1,5 +1,5 @@
 from PyQt5.QtWidgets import *
-
+from Database import *
 from Display import Ui_Display
 from MainPage import Ui_MainPage
 
@@ -11,8 +11,14 @@ class first_window(QWidget, Ui_MainPage):
         self.setupUi(self)
         self.this = second_window()
         self.pushButton.clicked.connect(self.gotosecond)
+        self.trackingnum = self.textEdit
+
 
     def gotosecond(self):
+        self.this.textBrowser = self.trackingnum
+        self.this.textBrowser_2 = show_one_display(self.trackingnum, 1)
+        self.this.textBrowser_3 = show_one_display(self.trackingnum, 2)
+        self.this.textBrowser_4 = show_one_display(self.trackingnum, 3)
         self.this.show()
         self.hide()
 
