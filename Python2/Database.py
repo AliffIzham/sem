@@ -71,7 +71,6 @@ def show_one_display(k, f):
     conn = sqlite3.connect("tracking.db")
     c = conn.cursor()
 
-
     c.execute("SELECT * FROM infos")
 
     items = c.fetchall()
@@ -85,7 +84,6 @@ def check(k):
     conn = sqlite3.connect("tracking.db")
     c = conn.cursor()
 
-
     c.execute("SELECT * FROM infos")
 
     items = c.fetchall()
@@ -95,10 +93,25 @@ def check(k):
             conn.close()
             return True
 
+
 def update():
     conn = sqlite3.connect("tracking.db")
     c = conn.cursor()
 
+    num_updated = input("Enter item to be updated (track in): ")
+
+    date_in_updated = input("Date in: ")
+    date_out_updated = input("Date out: ")
+    status_updated = input("Status: ")
+
+    print(date_in_updated)
+
+    c.execute("""UPDATE infos SET date_in = :in, date_out = :out, status = :stats
+                 WHERE track_num_in = :track_num""",
+                 {'track_num': num_updated,'in': date_in_updated,'out': date_out_updated,'stats': status_updated})
+
+    conn.commit()
+    conn.close()
 
 def delete_one():
     conn = sqlite3.connect("tracking.db")

@@ -40,11 +40,9 @@ class second_window(QWidget, Ui_Display):
         #self.that = first_window()
         self.BackButton.clicked.connect(self.hide)
 
-
-"""    def gotofirst(self):
-        self.that.show()
-        self.hide()
-"""
+    # def gotofirst(self):
+    #     self.that.show()
+    #     self.hide()
 
 if __name__ == '__main__':
     app = QApplication([])
