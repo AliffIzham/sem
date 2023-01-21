@@ -1,6 +1,6 @@
 import Database
 
-Database.show_all()
+Database.add_one()
 
 
 
