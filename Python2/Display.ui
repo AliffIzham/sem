@@ -79,9 +79,9 @@ p, li { white-space: pre-wrap; }
   <widget class="QPushButton" name="BackButton">
    <property name="geometry">
     <rect>
-     <x>430</x>
+     <x>520</x>
      <y>520</y>
-     <width>201</width>
+     <width>111</width>
      <height>41</height>
     </rect>
    </property>
@@ -97,7 +97,7 @@ p, li { white-space: pre-wrap; }
     <string notr="true">background-color: rgb(255, 255, 255);</string>
    </property>
    <property name="text">
-    <string>BACK TO MAIN PAGE</string>
+    <string>EXIT</string>
    </property>
   </widget>
   <widget class="QTextBrowser" name="textBrowser_3">

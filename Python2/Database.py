@@ -81,6 +81,24 @@ def show_one_display(k, f):
             conn.close()
             return item[f]
 
+def check(k):
+    conn = sqlite3.connect("tracking.db")
+    c = conn.cursor()
+
+
+    c.execute("SELECT * FROM infos")
+
+    items = c.fetchall()
+    for item in items:
+        if item[0] == k:
+            conn.commit()
+            conn.close()
+            return True
+
+def update():
+    conn = sqlite3.connect("tracking.db")
+    c = conn.cursor()
+
 
 def delete_one():
     conn = sqlite3.connect("tracking.db")

@@ -37,7 +37,7 @@ class Ui_Display(object):
         self.textBrowser_2.setStyleSheet("background-color: rgb(238, 238, 238);")
         self.textBrowser_2.setObjectName("textBrowser_2")
         self.BackButton = QtWidgets.QPushButton(Display)
-        self.BackButton.setGeometry(QtCore.QRect(430, 520, 201, 41))
+        self.BackButton.setGeometry(QtCore.QRect(520, 520, 111, 41))
         font = QtGui.QFont()
         font.setFamily("Algerian")
         font.setPointSize(10)
@@ -98,7 +98,7 @@ class Ui_Display(object):
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:20pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:7.8pt;\"><br /></p></body></html>"))
-        self.BackButton.setText(_translate("Display", "BACK TO MAIN PAGE"))
+        self.BackButton.setText(_translate("Display", "EXIT"))
         self.textBrowser_3.setHtml(_translate("Display", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
