@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
+{% csrf_token %}
 
 <html lang="en">
 <head>
@@ -20,7 +21,7 @@
     <div class="track-info">
         <h2 style="margin-bottom: 5px;">Track item</h2>
         <p style="margin-top: 5px;">Your tracking number :</p>
-        <div class="id-num"><p>ID Number </p></div>                                           <!--***backend here***--!>
+        <div class="id-num"><p>{{display.idnum}} </p></div>                                           <!--***backend here***--!>
     </div>
 
     <div class="data-info">
@@ -29,15 +30,15 @@
         </div>
         <div class="inside-status">
             <h4>In</h4>
-            <p>status detail</p>                                                              <!--***backend here***--!>
+            <p>{{package.dateIn}}</p>                                                              <!--***backend here***--!>
         </div>
         <div class="out-status">
             <h4>Out</h4>
-            <p>status detail</p>                                                              <!--***backend here***--!>
+            <p>{{package.dateOut}}</p>                                                              <!--***backend here***--!>
         </div>
         <div class="detail-status">
             <h4>Detail</h4>
-            <p>status detail</p>                                                              <!--***backend here***--!>
+            <p>{{package.Stats}}</p>                                                              <!--***backend here***--!>
         </div>
     </div>
 </div>
